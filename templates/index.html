@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hypothroid Diagnosis</title>
+  
+</head>
+
+<body style="background: #D5D6EA;">
+ <div class="login">
+	<h1 style="color:Black;">Hypothroid Diagnosis</h1>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <label for="Age">Age:</label>
+    	<input type="text" name="Age" placeholder="Enter your Age" required="required" /><p>
+    	<label for="Sex">Sex:</label>
+        <input type="text" name="Sex" placeholder="(1=Male) or (0=Female)" required="required" /><p>
+        <label for="On Thyroxine">On Thyroxine:</label>
+        <input type="text" name="On Thyroxine" placeholder="(1=True) or (0=False)" required="required" /><p>
+        <label for="Query on Thyroxine">Query on Thyroxine:</label>
+        <input type="text" name="Query on Thyroxine" placeholder="(1=True) or (0=False)" required="required" /><p>
+        <label for="Sick">Sick:</label>
+        <input type="text" name="Sick" placeholder="(1=True) or (0=False)" required="required" /><p>
+        <label for="Pregnant">Pregnant:</label>
+        <input type="text" name="Pregnant" placeholder="(1=True) or (0=False)" required="required" /><p>
+        <label for="Thyroid Surgery">Thyroid Surgery:</label>
+        <input type="text" name="Thyroid Surgery" placeholder="(1=True) or (0=False)" required="required" /><p>
+        <label for="Query on Hypothyroid">Query on Hypothyroid:</label>
+        <input type="text" name="Query on Hypothyroid" placeholder="(1=True) or (0=False)" required="required" /><p>
+        <label for="Query on Hyperthyroid">Query on Hyperthyroid:</label>
+        <input type="text" name="Query on Hyperthyroid" placeholder="(1=True) or (0=False)" required="required" /><p>
+        <label for="Psych">Psych:</label>
+        <input type="text" name="Psych" placeholder="(1=True) or (0=False)" required="required" /><p>
+        <label for="TSH Levels">TSH Levels:</label>
+        <input type="text" name="TSH Levels" placeholder="Enter the TSH Levels" required="required" /><p>
+        <label for="T3 Levels">T3 Levels:</label>
+        <input type="text" name="T3 Levels" placeholder="Enter the T3 Levels" required="required" /><p>
+        <label for="TT4 Levels">TT4 Levels:</label>
+        <input type="text" name="TT4 Levels" placeholder="Enter the TT4 Levels" required="required" /><p>
+        <label for="FTI Levels">FTI Levels:</label>
+        <input type="text" name="FTI Levels" placeholder="Enter the Levels" required="required" /><p>       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button></p>
+    </form>
+<p>0:Negative , 1: Compensated Hypothyroid, 2: Primary Thyroid and 3: Secondary Thyroid</p> 
+   <h4 style="color:Black;">
+   {{prediction_text }} </h4>
+   
+ </div>
+
+
+</body>
+</html>
